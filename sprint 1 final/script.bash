@@ -21,6 +21,35 @@ Menu() {
     echo -n "Enter your choice: "
 }
 
+CopyFile() {
+    echo -n "Enter source file name: "
+    read source
+    echo -n "Enter destination file name: "
+    read destination
+    if [ -e $source ]
+    then
+        cp $source $destination
+        echo "File copied successfully"
+    else
+        echo "Source file does not exist"
+    fi
+}
+
+WriteFile() {
+    echo -n "Enter a file name to write to: "
+    read filename
+    txt=""
+    while txt != "exit" 
+    do
+        echo -n "Enter a line of text or 'exit' to quit: "
+        read txt
+        if [ $txt != "exit" ]
+        then
+            echo $txt >> $filename
+        fi
+    done
+}
+
 while [ $option != 0 ]
 do
         Menu
