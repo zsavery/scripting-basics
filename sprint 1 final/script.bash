@@ -50,6 +50,47 @@ WriteFile() {
     done
 }
 
+FindingWords() {
+    echo -n "Enter file name to search: "
+    read filename
+    if [ -e $filename ]
+    then
+        echo -n "Enter word to find: "
+        read word
+        grep -o $word $filename | wc -l
+        # wc is word count 
+        # wc -l counts the number of lines
+        # -o option in grep prints each match on a new line
+    else
+        echo "File does not exist"
+    fi
+}
+
+CompareString() {
+    echo -n "Enter first string: "
+    read str1
+    echo -n "Enter second string: "
+    read str2
+    if [ "$str1" = "$str2" ]
+    then
+        echo "Strings are equal"
+    else
+        echo "Strings are not equal"
+    fi
+}
+
+CompareNumbers() {
+    echo -n "Enter first number: "
+    read num1
+    echo -n "Enter second number: "
+    read num2
+    if [ $num1 -eq $num2 ]
+    then
+        echo "Numbers are equal"
+    else
+        echo "Numbers are not equal"
+    fi
+}
 while [ $option != 0 ]
 do
         Menu
