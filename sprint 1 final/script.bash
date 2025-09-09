@@ -9,7 +9,17 @@ FileRead() {
     fi
 }
 
-
+Menu() {
+    echo "Choose an option [1-6] or 0 to exit"
+    echo "1. Read a file"
+    echo "2. Copy a file"
+    echo 3"Write to a file"
+    echo "4. Find words in a file"
+    echo "5. Compare two strings"
+    echo "6. Compare two numbers"
+    echo "0. Exit"
+    echo -n "Enter your choice: "
+}
 
 while [ $option != 0 ]
 do
