@@ -71,7 +71,7 @@ CompareString() {
     read str1
     echo -n "Enter second string: "
     read str2
-    if [ "$str1" = "$str2" ]
+    if [ "$str1" -eq "$str2" ]
     then
         echo "Strings are equal"
     else
