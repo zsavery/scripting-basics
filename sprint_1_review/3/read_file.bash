@@ -6,7 +6,7 @@
 FILE="pan.md"
 
 if [[ ! -f "$FILE" ]]; then
-  
+    echo "File not found."
 fi
-
+cat pan.md
 # Your code here
